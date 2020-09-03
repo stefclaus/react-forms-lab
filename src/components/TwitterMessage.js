@@ -27,6 +27,7 @@ class TwitterMessage extends React.Component {
 
 
   render() {
+    let charNumber = this.props.maxChars - this.state.message.length
     return (
       <div>
         <strong>Your message: </strong>
@@ -37,7 +38,7 @@ class TwitterMessage extends React.Component {
           onChange={event => this.handleMessageChange(event)}
           onKeyPress={event => this.handleCharsRemaining(event)}
           value={this.state.message} />
-        <strong> {this.state.charsRemaining} chararcters remaining </strong>
+        <strong> {charNumber} chararcters remaining </strong>
       </div>
     );
   }
